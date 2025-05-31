@@ -2,7 +2,7 @@ const AWS  = require('aws-sdk');
 const axios =  require('axios');
 const dotenv =  require('dotenv');
 
-dotenv.config();
+dotenv.config();  
 
 // Initialize SQS
 const sqs = new AWS.SQS({
@@ -37,7 +37,7 @@ const QUEUE_URL = process.env.SQS_QUEUE_URL
         console.log('Raw Message Body:', body.MessageAttributes);
         console.log('Parsed Message:', actualMessage);
 
-        // // Example: Call product service to reduce quantity
+        // Call product service to reduce quantity
         // await axios.post('http://localhost:4002/product/reduce', {
         //   productId: actualMessage.productId,
         //   quantity: actualMessage.quantity,
